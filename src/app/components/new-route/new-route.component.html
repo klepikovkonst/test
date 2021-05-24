@@ -1,0 +1,9 @@
+<div class="container">
+    <h1>Добавить маршрут</h1>
+
+    <route-form [route]="null" #routeForm [readonly]="updating$ | async"></route-form>
+
+    <div class="actions">
+        <button mat-raised-button class="mat-accent" (click)="add(routeForm.updateRouteByForm())" [disabled]="updating$ | async">Добавить маршрут</button>
+    </div>
+</div>

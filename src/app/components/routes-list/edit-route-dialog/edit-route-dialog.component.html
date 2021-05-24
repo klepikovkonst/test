@@ -1,0 +1,13 @@
+<div class="container">
+    <h2 mat-dialog-title>{{title}}</h2>
+
+    <route-form [route]="route" #routeForm [readonly]="updating$ | async"></route-form>
+
+    <div fxLayout="row" fxLayoutAlign="start center" mat-dialog-actions>
+        <button mat-button mat-dialog-close [disabled]="updating$ | async">Закрыть</button>
+        <div fxFlex="1 1 auto" fxLayoutAlign="end center" fxLayoutGap="10px">
+            <button mat-raised-button class="mat-warn" (click)="delete()" [disabled]="updating$ | async">Удалить</button>
+            <button mat-raised-button class="mat-primary" (click)="save(routeForm.updateRouteByForm())" [disabled]="updating$ | async">Сохранить</button>
+        </div>
+    </div>
+</div>

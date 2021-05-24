@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
+
+import { ApiService } from './services/api.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
-  title = 'routes';
+    constructor(
+        private apiService: ApiService,
+    )
+    {
+        
+    }
 }

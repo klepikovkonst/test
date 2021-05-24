@@ -1,0 +1,24 @@
+<div fxLayout="column" [formGroup]="form">
+    <mat-form-field>
+        <mat-label>Адрес сети назначения</mat-label>
+        <input type="text" matInput formControlName="address">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Маска подсети</mat-label>
+        <input type="text" matInput formControlName="mask">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Адрес шлюза</mat-label>
+        <input type="text" matInput formControlName="gateway">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Интерфейс</mat-label>
+        <mat-select formControlName="interface">
+            <mat-option value="">Любой</mat-option>
+            <mat-option value="VPN">VPN</mat-option>
+            <mat-option value="ISP">ISP</mat-option>
+            <mat-option value="Guest">Guest</mat-option>
+            <mat-option value="Home">Home</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

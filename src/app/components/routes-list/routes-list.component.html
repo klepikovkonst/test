@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Список маршрутов</h1>
+
+    <mat-table matSort [dataSource]="dataSource">
+        <ng-container matColumnDef="address">
+            <mat-header-cell *matHeaderCellDef mat-sort-header="address">Адрес назначения</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.address}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="gateway">
+            <mat-header-cell *matHeaderCellDef mat-sort-header="gateway">Шлюз</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.gateway}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="inteface">
+            <mat-header-cell *matHeaderCellDef mat-sort-header="interface">Интерфейс</mat-header-cell>
+            <mat-cell *matCellDef="let row">{{row.interface}}</mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="editRoute(row)" [class.loading]="loading$ | async"></mat-row>
+    </mat-table>
+</div>
